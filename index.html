@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/64e735f8e3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img class="name" src="./Images/Sowmi2.png" alt="">
+                <ul id="sidemenu">
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#skills-section">SKILLS</a></li>
+                    <li><a href="#projects">PROJECT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <img class="person" src="./Images/intro.png" alt="">
+            <div class="header-text">
+                <h1>Hi, I'm <span>Sowmiya</span></h1>
+                <p>I'm <span id="dynamic-text"></span></p>
+                <a href="./Images/U.Sowmiya.pdf" download class=" btn btn2">Download CV</a>
+            </div>
+            <script>
+                const dynamicTextElement = document.getElementById("dynamic-text");
+                const phrases = ["Software Engineer","Mobile Developer", "Web Developer", "Desktop Developer"];
+                let index = 0;
+
+            function changeText() {
+                dynamicTextElement.classList.remove('fade-in');  
+                void dynamicTextElement.offsetWidth; 
+                dynamicTextElement.textContent = phrases[index];
+                dynamicTextElement.classList.add('fade-in'); 
+                index = (index + 1) % phrases.length; 
+            }
+            setInterval(changeText, 2000); // Change text every 2 seconds
+
+            </script>
+        </div>
+    </div>
+
+    <!-------------about---------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col1">
+                    <img src="./Images/about.png" >
+                </div>
+                <div class="about-col2">
+                    <h1 class="title">About</h1>
+                    <h1 class="title1">Me</h1>
+                    <p class="about-para">I'm Sowmiya, a fourth-year Software Engineering student at the Open University of Sri Lanka, passionate about front-end development. Eager to apply my skills through an internship, I bring honesty, self-motivation, and dedication to my work. Hailing from Jaffna, I strive to contribute to impactful and innovative projects.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ol>
+                            <li>Oyslans Software Solutions Pvt Ltd - <span>22 January 2024 - 05 September 2024</span></li>
+                            <li>Trainee Software Developer</li>
+                            <li><span>Desktop Application - </span> C# | Ms sql </li>
+                            <li><span>Web Application - </span> Asp.Net core | C# | Ms sql </li>
+                        </ol>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ol>
+                            <li><span>2018 :- </span>G.C.E A/L</li>
+                            <li><span>2021 DEC-2025 :- </span>Bachelor Of Software Engineering Honours</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <section id="skills-section">
+        <div class="container">
+            <h2 class="sub-title">My <span>Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                    <div class="progress-bar"><div class="progress html"></div></div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                    <div class="progress-bar"><div class="progress css"></div></div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <div class="progress-bar"><div class="progress js"></div></div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-flutter"></i>
+                    <h3>Flutter</h3>
+                    <div class="progress-bar"><div class="progress flutter"></div></div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code"></i> 
+                    <h3>C#</h3>
+                    <div class="progress-bar"><div class="progress csharp"></div></div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i> 
+                    <h3>MySQL</h3> 
+                    <div class="progress-bar">
+                        <div class="progress mysql"></div> 
+                    </div>
+                </div>                                         
+                <div class="skill-card">
+                    <i class="fas fa-code"></i> 
+                    <h3>ASP.NET Core</h3>
+                    <div class="progress-bar">
+                        <div class="progress aspnetcore"></div>
+                    </div>
+                </div>                
+                <div class="skill-card">
+                    <i class="fab fa-figma"></i>
+                    <h3>Figma</h3>
+                    <div class="progress-bar"><div class="progress figma"></div></div>
+                </div>
+                        
+            </div>
+        </div>
+    </section>
+
+    <!----------projects------------>
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My <span>Project</span></h1>
+            <!-- <h1 class="sub-title1">Projects</h1> -->
+          
+            <div class="work-list">
+                <div class="work">
+                    <img src="./Images/Screenshot1.png" alt="">
+                    <div class="layer">
+                        <h3>FlavorFusion Pies Website </h3>
+                        <p>Developed a dynamic and responsive pizza website using React.js as a
+                            front-end project. The website features a user-friendly home page, a
+                            menu showcasing delicious pizza options, an informative about page, and
+                            a contact page for easy communication.</p>
+                            <div class="tech-tags">
+                                <span class="tag">React.js</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./Images/Screenshot2.png" alt="">
+                    <div class="layer">
+                        <h3>Cakes Golore </h3>
+                        <p>CAKESGALORE is a cake selling Front-end website. Developed an intuitive
+                            user interface allowing customers to effortlessly browse and
+                            select from a variety of cakes, including new arrivals. Add their
+                            oders in cart and order.</p>
+                            <div class="tech-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./Images/Screenshot 4.png" alt="">
+                    <div class="layer">
+                        <h3>SignUp/SignIn</h3>
+                        <p>Designed and implemented a responsive Signup and SignIn website.</p>
+                            <div class="tech-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./Images/Screenshot3.png" alt="">
+                    <div class="layer">
+                        <h3>Sample TailwindCSS Website</h3>
+                        <p>Developed a sample website using Tailwind CSS, demonstrating proficiency in 
+                            utility-first CSS frameworks.</p>
+                            <div class="tech-tags">
+                                <span class="tag">TailwindCSS</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./Images/Screenshot5.png" alt="">
+                    <div class="layer">
+                        <h3>Hospitam management</h3>
+                        <p>Developed a sample desktop application using WPF framework and MVC architecture</p>
+                            <div class="tech-tags">
+                                <span class="tag">xaml</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">MS Sql</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./Images/trashtocash.png" alt="">
+                    <div class="layer">
+                        <h3>It is a </h3>
+                        <p>Developed a mobile application called TrashToCash. It's a Android application. Selling recycle trashes and get cash for that through the application. </p>
+                            <div class="tech-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">xml</span>
+                                <span class="tag">SQLite</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact me -->
+    <div id="contact">
+        <div class="container">
+            <h1 class="sub-title">Contact <span>Me</span></h1>
+            <div class="contact-info">
+                <div class="contact-box">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sowmiya-uthayakumar-a7781128b/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Sowmiya1301"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:usowmiya00@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="mail">
+                    <p> <i class="fa-solid fa-envelope"></i> usowmiya00@gmail.com</p>
+                </div> 
+            </div>
+            </div>
+        </div>
+    </div> 
+
+<!----------Script------------->
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+
+    </script>
+    
+</body>
+</html>
